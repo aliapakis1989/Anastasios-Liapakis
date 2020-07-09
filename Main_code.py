@@ -12,14 +12,14 @@ excepti=[] #Initialization of the exception list of stemming.
 asimantes=[] #Initialization of the stop words list.
 antist={}#Initialization of the dictionary for converting lowercase characters to uppercase.
 neg=[] #Initialization of the negations' list.
-food=open("C:/modules/food.txt",'r',encoding="utf8")
-service=open("C:/modules/service.txt",'r',encoding="utf8")
-image=open("C:/modules/image.txt",'r',encoding="utf8")
+food=open("C:/modules/LF.txt",'r',encoding="utf8")
+service=open("C:/modules/LS.txt",'r',encoding="utf8")
+image=open("C:/modules/LI.txt",'r',encoding="utf8")
 antistixies=open("C:/modules/kef-2.txt",encoding="utf8")
-asiman=open("C:/modules/asimantes.txt",'r',encoding="utf8")
-dicq=open("C:/modules/DQ.txt",'r',encoding="utf8")
-dics=open("C:/modules/DS.txt",'r',encoding="utf8")
-dici=open("C:/modules/DI.txt",'r',encoding="utf8")
+asiman=open("C:/modules/StopWords.txt",'r',encoding="utf8")
+dicq=open("C:/modules/Dictionary_DoQi.txt",'r',encoding="utf8")
+dics=open("C:/modules/Dictionary_DοS.txt",'r',encoding="utf8")
+dici=open("C:/modules/Dictionary_DoΙ.txt",'r',encoding="utf8")
 suff=open("C:/modules/suffix.txt",'r',encoding="utf8")
 exceptions=open("C:/modules/stemming_exceptions.txt",'r',encoding="utf8")
 negative=open("C:/modules/negative.txt",'r',encoding="utf8")
