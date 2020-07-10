@@ -10,7 +10,7 @@ The file StopWords.txt is referred to the designed StopWords list concerning the
 The file negative.txt is referred to the designed list of negations terms concerning the Greek F&B domain.
 The files suffix.txt and stemming_exception.txt are referred to the designed list of suffixes concerning the stemming process.
 The file kef-2.txt is referred to the designed correlation file concerning the capitalization of the customers' reviews.  
-In demo, the annotated data set is used for presenting the proposed hybrid-level of sentiment analysis framework. The main purpose of the designed system is for computing the sentiment orientation of each function in the F&B domain. Thus, the corresponding file is presented as: Annotated1.accdb. The details about each field are presented below:
+In demo, the annotated data set is used for presenting the proposed hybrid-level of sentiment analysis framework. The main purpose of the designed system is for computing the sentiment orientation of each function in the F&B domain. Thus, the corresponding file is presented as: Annotated1.accdb. Explanations about each field in the database, are presented below:
 First field (kleidi): The customers' review ID in the database
 Second field (nomos): The name of NUTS3 region that the evaluated company is being operated.
 Third field (user): The users' credentials in the e-ordering platform.
