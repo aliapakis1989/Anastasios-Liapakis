@@ -15,11 +15,11 @@ First field (kleidi): The customers' review ID in the database
 Second field (nomos): The name of NUTS3 region that the evaluated company is being operated.
 Third field (user): The users' credentials in the e-ordering platform.
 Fourth field (Review): The examined customers' reviews.
-Fifth field (Date): The creation date of reviews. 
+Fifth field (Date): The reviews' creation date. 
 Sixth field (shop): Restaurant's or cafeteria's name.
 Seventh field (Stars): Overall evaluation in a 5-Likert scale as was mined from the examined e-ordering platform.
-Eigth field (: The ID of customer's review in thn annotated data set.
-Ninth field: The system's overall evaluation for the function of food quality.
-Tenth field: The system's overall evaluation for the function of customer service.
-Eleventh field: The system's overall evaluation for the function of image of the company. 
+Eigth field (id): The ID of customer's review in the annotated data set.
+Ninth field (quality): The system's overall evaluation for the function of food quality.
+Tenth field (service): The system's overall evaluation for the function of customer service.
+Eleventh field (image): The system's overall evaluation for the function of image of the company. 
 
