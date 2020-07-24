@@ -248,55 +248,55 @@ def evaluate_quality(le,thes,DOQ,LF,NE):
     eval_qual1=0
 #Τhe program searches for an adjective in DoQl in the previous location (j-1) of the aspect and
 #examines the following possibilities.
-    if le[thes-1] in DOQl:
+    if le[thes-1] in DOQ:
         if le[thes+1]=='.' or le[thes+1]==',' or le[thes+1]=='':
-            if le[thes-2]in DOQl:
+            if le[thes-2]in DOQ:
                 if le[thes-3]in LF:
-                    eval_qual1=DOQl[le[thes-1]]
+                    eval_qual1=DOQ[le[thes-1]]
                 else:
-                    eval_qual1=(DOQl[le[thes-1]]+DOQl[le[thes-2]])/2
+                    eval_qual1=(DOQ[le[thes-1]]+DOQ[le[thes-2]])/2
             elif le[thes-2]in NE:
-                eval_qual1=-DOQl[le[thes-1]]
+                eval_qual1=-DOQ[le[thes-1]]
             else:
-                eval_qual1=DOQl[le[thes-1]]
-        elif le[thes+1] in DOQl:
+                eval_qual1=DOQ[le[thes-1]]
+        elif le[thes+1] in DOQ:
             if le[thes+2]=='.' or le[thes+2]==',' or le[thes+2]=='':
-                eval_qual1=(DOQl[le[thes-1]]+DOQl[le[thes+1]])/2
+                eval_qual1=(DOQ[le[thes-1]]+DOQ[le[thes+1]])/2
             elif le[thes+2] in LF:
-                eval_qual1=DOQl[le[thes-1]]
+                eval_qual1=DOQ[le[thes-1]]
         elif le[thes-2]=='.'or le[thes-2]==','or le[thes-2]=='':
-            if le[thes+2] in DOQl:
-                eval_qual1=(DOQl[le[thes+2]]+DOQ[le[thes-1]])/2
+            if le[thes+2] in DOQ:
+                eval_qual1=(DOQ[le[thes+2]]+DOQ[le[thes-1]])/2
             else:
-                eval_qual1=DOQl[le[thes-1]]
-        elif le[thes-2] in DOQl:
-            eval_qual1=(DOQl[le[thes-1]]+DOQl[le[thes-2]])/2
+                eval_qual1=DOQ[le[thes-1]]
+        elif le[thes-2] in DOQ:
+            eval_qual1=(DOQ[le[thes-1]]+DOQ[le[thes-2]])/2
         else:
-            eval_qual1=DOQl[le[thes-1]]
-#Τhe program searches for an adjective in DoQi in the after location(j+1)of the aspect and examines
+            eval_qual1=DOQ[le[thes-1]]
+#Τhe program searches for an adjective in DoQl in the after location(j+1)of the aspect and examines
 #the following possibilities in the case that there is no adjective in location “j-1”.
-    elif le[thes+1] in DOQl:
+    elif le[thes+1] in DOQ:
         if le[thes+2]=='.'or le[thes+2]==','or le[thes+2]=='':
             if le[thes-1] in NE:
-                eval_qual1=-DOQl[le[thes+1]]
+                eval_qual1=-DOQ[le[thes+1]]
             else:
-                eval_qual1=DOQl[le[thes+1]]
-        elif le[thes+2]in DOQl:
+                eval_qual1=DOQ[le[thes+1]]
+        elif le[thes+2]in DOQ:
             if le[thes+3]in LF:
-                eval_qual1=DOQl[le[thes+1]]
+                eval_qual1=DOQ[le[thes+1]]
             elif le[thes+3]==',' or le[thes+3]=='.'or le[thes+3]=='':
-                eval_qual1=(DOQl[le[thes+1]]+DOQl[le[thes+2]])/2
-            elif le[thes+3]in DOQl:
+                eval_qual1=(DOQ[le[thes+1]]+DOQ[le[thes+2]])/2
+            elif le[thes+3]in DOQ:
                 if le [thes+4]in LF:
-                    eval_qual1=(DOQl[le[thes+1]]+DOQl[le[thes+2]])/2
+                    eval_qual1=(DOQ[le[thes+1]]+DOQ[le[thes+2]])/2
                 else:
-                    eval_qual1=(DOQl[le[thes+1]]+DOQl[le[thes+2]]+DOQl[le[thes+3]])/3
+                    eval_qual1=(DOQ[le[thes+1]]+DOQ[le[thes+2]]+DOQ[le[thes+3]])/3
             else:
-                eval_qual1=(DOQl[le[thes+1]]+DOQl[le[thes+2]])/2
+                eval_qual1=(DOQ[le[thes+1]]+DOQ[le[thes+2]])/2
         elif le[thes+2] in LF:
-            eval_qual1=DOQl[le[thes+1]]
+            eval_qual1=DOQ[le[thes+1]]
         else:
-            eval_qual1=DOQl[le[thes+1]]
+            eval_qual1=DOQ[le[thes+1]]
     elif le[thes+1]=='.' or le[thes+1]=='' or le[thes+1]==',':
         eval_qual1=0
 #It moves to the location “j+2” and examines the following possibilities in the case that there is
@@ -304,18 +304,18 @@ def evaluate_quality(le,thes,DOQ,LF,NE):
     elif le[thes+2] in DOQ:
         if le [thes+3]=='.'or le[thes+3]==',' or le[thes+3]=='':
             if le[thes+1]in NE:
-                eval_qual1=-DOQl[le[thes+2]]
+                eval_qual1=-DOQ[le[thes+2]]
             else:
-                eval_qual1=DOQl[le[thes+2]]
+                eval_qual1=DOQ[le[thes+2]]
         elif le [thes+3] in LF:
-            if le[thes+4] in DOQl:
-                eval_qual1=DOQl[le[thes+2]]
+            if le[thes+4] in DOQ:
+                eval_qual1=DOQ[le[thes+2]]
         else:
-            eval_qual1=DOQl[le[thes+2]]
+            eval_qual1=DOQ[le[thes+2]]
 #It moves to the location “j-2” in the case that there is no adjective
 #in locations “j-1”and "j+1".
-    elif le[thes-2] in DOQl:
-        eval_qual1=DOQl[le[thes-2]]
+    elif le[thes-2] in DOQ:
+        eval_qual1=DOQ[le[thes-2]]
     else:
         eval_qual1=0
     return eval_qual1
