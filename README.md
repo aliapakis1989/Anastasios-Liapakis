@@ -22,4 +22,4 @@ Eigth field (id): The ID of customer's review in the annotated data set.
 Ninth field (quality): The system's overall evaluation for the function of food quality.
 Tenth field (service): The system's overall evaluation for the function of customer service.
 Eleventh field (image): The system's overall evaluation for the function of image of the company. 
-The aspects' assesments are displayed in the .accdb file. 
+The aspects' assesments are displayed in the Annotated1.accdb file.
