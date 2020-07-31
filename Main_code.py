@@ -8,7 +8,7 @@ suf=[] #Initialization of the list of suffixes.
 DQ={} #Initialization of the quality's dictionary that contains adjectives that describe the function of quality.
 DC={} #Initialization of the customer's service dictionary that contains adjectives that describe the function of service.
 DI={} #Initialization of the images's dictionary that contains adjectives that describe the function of image.
-excepti=[] #Initialization of the exception list of stemming.
+excepti=[] #Initialization of the exceptions' list of stemming.
 asimantes=[] #Initialization of the stop words list.
 antist={}#Initialization of the dictionary for converting lowercase characters to uppercase.
 neg=[] #Initialization of the negations' list.
@@ -38,7 +38,7 @@ for rec in asiman:
     asimantes.append(tim)
 asiman.close()
 asimantes.sort()
-#Creating an exception list of stemming.
+#Creating an exceptions' list of stemming.
 for rec in exceptions:
     tim=rec.strip('/n')
     tim=tim.strip()
@@ -52,19 +52,19 @@ for rec in negative:
     neg.append(tim)
 negative.close()
 neg.sort
-#Creating a list for the aspects of food (list F).
+#Creating a list for the aspects of food (list LF).
 for rec in food:
     timiq=rec.strip('/n')
     timiq=timiq.strip()
     F.append(timiq)
 food.close()
-#Creating a list for the aspects of customer service (List S).
+#Creating a list for the aspects of customer service (List LS).
 for rec in service:
     timis=rec.strip('/n')
     timis=timis.strip()
     S.append(timis)
 service.close()
-#Creating a list for the aspects of image of the company (List I).
+#Creating a list for the aspects of image of the company (List LI).
 for rec in image:
     timii=rec.strip('/n')
     timii=timii.strip()
