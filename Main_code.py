@@ -17,7 +17,7 @@ service=open("C:/modules/LS.txt",'r',encoding="utf8") #Add the appropriate path.
 image=open("C:/modules/LI.txt",'r',encoding="utf8") #Add the appropriate path.
 antistixies=open("C:/modules/capitalize.txt",encoding="utf8") #Add the appropriate path.
 asiman=open("C:/modules/StopWords.txt",'r',encoding="utf8") #Add the appropriate path.
-dicq=open("C:/modules/Dictionary_DoQi.txt",'r',encoding="utf8") #Add the appropriate path.
+dicq=open("C:/modules/Dictionary_DoQl.txt",'r',encoding="utf8") #Add the appropriate path.
 dics=open("C:/modules/Dictionary_DοS.txt",'r',encoding="utf8") #Add the appropriate path.
 dici=open("C:/modules/Dictionary_DoΙ.txt",'r',encoding="utf8") #Add the appropriate path.
 suff=open("C:/modules/suffix.txt",'r',encoding="utf8") #Add the appropriate path.
