@@ -10,7 +10,7 @@ def allagi(lex,apo,se):
         lex=lex.replace(apo[i],se[i])
     return lex
 def read_replace():
-    arxeio=open("C:\PhD/aaaa.txt",'r',encoding="utf8")
+    arxeio=open("C:/modules/aaaa.txt",'r',encoding="utf8")
     allagi_apo=[]
     allagi_se=[]
     for rec in arxeio:
