@@ -12,17 +12,17 @@ excepti=[] #Initialization of the exception list of stemming.
 asimantes=[] #Initialization of the stop words list.
 antist={}#Initialization of the dictionary for converting lowercase characters to uppercase.
 neg=[] #Initialization of the negations' list.
-food=open("C:/modules/LF.txt",'r',encoding="utf8")
-service=open("C:/modules/LS.txt",'r',encoding="utf8")
-image=open("C:/modules/LI.txt",'r',encoding="utf8")
-antistixies=open("C:/modules/kef-2.txt",encoding="utf8")
-asiman=open("C:/modules/StopWords.txt",'r',encoding="utf8")
-dicq=open("C:/modules/Dictionary_DoQi.txt",'r',encoding="utf8")
-dics=open("C:/modules/Dictionary_DοS.txt",'r',encoding="utf8")
-dici=open("C:/modules/Dictionary_DoΙ.txt",'r',encoding="utf8")
-suff=open("C:/modules/suffix.txt",'r',encoding="utf8")
-exceptions=open("C:/modules/stemming_exceptions.txt",'r',encoding="utf8")
-negative=open("C:/modules/negative.txt",'r',encoding="utf8")
+food=open("C:/modules/LF.txt",'r',encoding="utf8") #Add the appropriate path.
+service=open("C:/modules/LS.txt",'r',encoding="utf8") #Add the appropriate path.
+image=open("C:/modules/LI.txt",'r',encoding="utf8") #Add the appropriate path.
+antistixies=open("C:/modules/capitalize.txt",encoding="utf8") #Add the appropriate path.
+asiman=open("C:/modules/StopWords.txt",'r',encoding="utf8") #Add the appropriate path.
+dicq=open("C:/modules/Dictionary_DoQi.txt",'r',encoding="utf8") #Add the appropriate path.
+dics=open("C:/modules/Dictionary_DοS.txt",'r',encoding="utf8") #Add the appropriate path.
+dici=open("C:/modules/Dictionary_DoΙ.txt",'r',encoding="utf8") #Add the appropriate path.
+suff=open("C:/modules/suffix.txt",'r',encoding="utf8") #Add the appropriate path.
+exceptions=open("C:/modules/stemming_exceptions.txt",'r',encoding="utf8") #Add the appropriate path.
+negative=open("C:/modules/negative.txt",'r',encoding="utf8") #Add the appropriate path.
 #Creating a dictionary for converting the lowercase characters to uppercase.
 for rec in antistixies:
     gramma=rec.split(',')
@@ -76,7 +76,7 @@ for rec in suff:
     timisuf=timisuf.strip()
     suf.append(timisuf)
 suff.close()
-#Creating the quality's dictionary (DoQi).
+#Creating the quality's dictionary (DoQl).
 for line in dicq:
     polar=line.split(',')
     kleidi=polar[0]
@@ -101,7 +101,7 @@ for line in dici:
     DI[kleidi]=float(timiI)
 dici.close()
 #Access to the data base that contains the customers' evaluations and useful information for analysis (data set or training set or annotated set).
-db_file = "C:/Users/Anastasios LIapakis/Dropbox/Phd/tasos_bigdata/PhD data/Code/Code_PhD/Final_program/modules/Annotated1.accdb"
+db_file = "C:/modules/Annotated1.accdb" #Add the appropriate path.
 user = 'admin'
 password = ''
 
@@ -144,14 +144,14 @@ for pedio in x:
         new=m.stem(lexii,excepti,suf)
         teliko=teliko+" "+new
     teliko=teliko.split(' ')
-    print('Το review προς αξιολόγηση έπειτα από την προεπεξεργασία είναι:',teliko,kwd)
+    print('FINAL REVIEW:',teliko,kwd)
     thesi=-1
 #Determining the terms' position.
     for lexi in teliko:
         thesi=thesi+1
 #Identifying a specific aspect from the list of Food (List F).
         if lexi in F:
-            print('Θέση φαγητού:',thesi,'//','Λέξη προς αξιολόγηση ποιότητας:',lexi)
+            print('POSITION OF FOOD ASPECT:',thesi,'//','FOOD ASPECT:',lexi)
 #Evaluating the specific food aspect.
             axiolq=m.evaluate_quality(teliko,thesi,DQ,F,neg)
 #Identifying the number of food's aspects in the review.
@@ -161,7 +161,7 @@ for pedio in x:
             sq=sq+axiolq
 #Identifying a specific aspect from the list of customer service (List S).
         if lexi in S:
-            print('Θέση εξυπηρέτησης:',thesi,'//''Λέξη προς αξιολόγηση εξυπηρέτησης:',lexi)
+            print('POSITION OF SERVICE ASPECT:',thesi,'//''SERVICE ASPECT:',lexi)
 #Evaluating the specific customer service aspect.
             axiols=m.evaluate_service(teliko,thesi,DC,S,neg)
             if axiols!=0:
@@ -171,7 +171,7 @@ for pedio in x:
             ss=ss+axiols
 #Identifying a specific aspect from the list of image (List I).
         if lexi in I:
-            print('Θέση εικόνας:',thesi,'//''Λέξη προς αξιολόγηση εικόνας:',lexi)
+            print('POSITION OF IMAGE ASPECT:',thesi,'//''IMAGE ASPECT:',lexi)
 #Evaluating the specific image aspect.
             axioli=m.evaluate_image(teliko,thesi,DI,I,neg)
             if axioli!=0:
@@ -182,7 +182,7 @@ for pedio in x:
 #Computing the average sentiment score of the review for the function of food's quality.
     if nq!=0:
         overalll_quality=(sq/nq)
-        print("Η ΑΞΙΟΛΟΓΗΣΗ ΤΗΣ ΕΞΥΠΗΡΕΤΗΣΗΣ ΕΙΝΑΙ:",overalll_quality)
+        print("QUALITY'S ASSESMENT:",overalll_quality)
 #Saving the average sentiment score of the review for the function of food's quality in the database.
         if overalll_quality!=0:
             entoli="update reviews set quality={} where kleidi={}".format(overalll_quality,kwd)
@@ -191,7 +191,7 @@ for pedio in x:
 #Computing the average sentiment score of the review for the function of customer's service.
     if ns!=0:
         overalll_service=(ss/ns)
-        print("Η ΑΞΙΟΛΟΓΗΣΗ ΤΗΣ ΕΞΥΠΗΡΕΤΗΣΗΣ ΕΙΝΑΙ:", overalll_service)
+        print("SERVICE'S ASSESMENT:", overalll_service)
 #Saving the average sentiment score of the review for the function of customer's service in the database.
         if overalll_service!=0:
             entoli="update reviews set service={} where kleidi={}".format(overalll_service,kwd)
@@ -200,7 +200,7 @@ for pedio in x:
 #Computing the average sentiment score of the review for the function of company's image.
     if ni!=0:
         overalll_image=(si/ni)
-        print("Η ΑΞΙΟΛΟΓΗΣΗ ΤΗΣ ΕΙΚΟΝΑΣ ΤΟΥ ΚΑΤΑΣΤΗΜΑΤΟΣ ΕΙΝΑΙ:", overalll_image)
+        print("COMPANY'S IMAGE ASSESMENT:", overalll_image)
 #Saving the average sentiment score of the review for the function of company's image in the database.
         if overalll_image!=0:
             entoli="update reviews set image={} where kleidi={}".format(overalll_image,kwd)
