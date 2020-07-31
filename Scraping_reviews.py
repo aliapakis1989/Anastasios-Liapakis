@@ -42,5 +42,5 @@ resp = json.loads(response.text)
 for comm in resp['data']:
     if comm['comment']:
         list.append(comm['comment'])
-print(list)
-print(len(list))
+for review in list:
+           print ("Review:", review)
