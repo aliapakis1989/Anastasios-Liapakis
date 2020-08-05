@@ -12,17 +12,17 @@ excepti=[] #Initialization of the exceptions' list of stemming.
 asimantes=[] #Initialization of the stop words list.
 antist={}#Initialization of the dictionary for converting lowercase characters to uppercase.
 neg=[] #Initialization of the negations' list.
-food=open("C:\PhD\Anastasios-Liapakis-master/LF.txt",'r',encoding="utf8") #Add the appropriate path.
-service=open("C:\PhD\Anastasios-Liapakis-master/LS.txt",'r',encoding="utf8") #Add the appropriate path.
-image=open("C:\PhD\Anastasios-Liapakis-master/LI.txt",'r',encoding="utf8") #Add the appropriate path.
-antistixies=open("C:\PhD\Anastasios-Liapakis-master/capitalize.txt",encoding="utf8") #Add the appropriate path.
-asiman=open("C:\PhD\Anastasios-Liapakis-master/StopWords.txt",'r',encoding="utf8") #Add the appropriate path.
-dicq=open("C:\PhD\Anastasios-Liapakis-master/Dictionary_DoQl.txt",'r',encoding="utf8") #Add the appropriate path.
-dics=open("C:\PhD\Anastasios-Liapakis-master/Dictionary_DοS.txt",'r',encoding="utf8") #Add the appropriate path.
-dici=open("C:\PhD\Anastasios-Liapakis-master/Dictionary_DoI.txt",'r',encoding="utf8") #Add the appropriate path.
-suff=open("C:\PhD\Anastasios-Liapakis-master/suffix.txt",'r',encoding="utf8") #Add the appropriate path.
-exceptions=open("C:\PhD\Anastasios-Liapakis-master/stemming_exceptions.txt",'r',encoding="utf8") #Add the appropriate path.
-negative=open("C:\PhD\Anastasios-Liapakis-master/negative.txt",'r',encoding="utf8") #Add the appropriate path.
+food=open("C:/PhD/LF.txt",'r',encoding="utf8") #Add the appropriate path.
+service=open("C:/PhD/LS.txt",'r',encoding="utf8") #Add the appropriate path.
+image=open("C:/PhD/LI.txt",'r',encoding="utf8") #Add the appropriate path.
+antistixies=open("C:/PhD/capitalize.txt",encoding="utf8") #Add the appropriate path.
+asiman=open("C:/PhD/StopWords.txt",'r',encoding="utf8") #Add the appropriate path.
+dicq=open("C:/PhD/Dictionary_DoQl.txt",'r',encoding="utf8") #Add the appropriate path.
+dics=open("C:/PhD/Dictionary_DοS.txt",'r',encoding="utf8") #Add the appropriate path.
+dici=open("C:/PhD/Dictionary_DoI.txt",'r',encoding="utf8") #Add the appropriate path.
+suff=open("C:/PhD/suffix.txt",'r',encoding="utf8") #Add the appropriate path.
+exceptions=open("C:/PhD/stemming_exceptions.txt",'r',encoding="utf8") #Add the appropriate path.
+negative=open("C:/PhD/negative.txt",'r',encoding="utf8") #Add the appropriate path.
 #Creating a dictionary for converting the lowercase characters to uppercase.
 for rec in antistixies:
     gramma=rec.split(',')
@@ -101,7 +101,7 @@ for line in dici:
     DI[kleidi]=float(timiI)
 dici.close()
 #Access to the data base that contains the customers' evaluations and useful information for analysis (data set or training set or annotated set).
-db_file = "C:\PhD\Anastasios-Liapakis-master/Annotated1.accdb" #Add the appropriate path.
+db_file = "C:/PhD/Annotated1.accdb" #Add the appropriate path.
 user = 'admin'
 password = ''
 
