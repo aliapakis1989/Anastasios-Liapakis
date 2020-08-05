@@ -1,6 +1,6 @@
 # - *- coding: utf- 8 - *-
 import pypyodbc
-import modul as m
+import modules as m
 F=[] #Initialization of the list F which contains nouns that referred to the quality's function.
 S=[] #Initialization of the list S which contains nouns that referred to the customer's service function.
 I=[] #Initialization of the list I which contains nouns that referred to the company's image function.
@@ -12,17 +12,17 @@ excepti=[] #Initialization of the exceptions' list of stemming.
 asimantes=[] #Initialization of the stop words list.
 antist={}#Initialization of the dictionary for converting lowercase characters to uppercase.
 neg=[] #Initialization of the negations' list.
-food=open("C:/modules/LF.txt",'r',encoding="utf8") #Add the appropriate path.
-service=open("C:/modules/LS.txt",'r',encoding="utf8") #Add the appropriate path.
-image=open("C:/modules/LI.txt",'r',encoding="utf8") #Add the appropriate path.
-antistixies=open("C:/modules/capitalize.txt",encoding="utf8") #Add the appropriate path.
-asiman=open("C:/modules/StopWords.txt",'r',encoding="utf8") #Add the appropriate path.
-dicq=open("C:/modules/Dictionary_DoQl.txt",'r',encoding="utf8") #Add the appropriate path.
-dics=open("C:/modules/Dictionary_DοS.txt",'r',encoding="utf8") #Add the appropriate path.
-dici=open("C:/modules/Dictionary_DoΙ.txt",'r',encoding="utf8") #Add the appropriate path.
-suff=open("C:/modules/suffix.txt",'r',encoding="utf8") #Add the appropriate path.
-exceptions=open("C:/modules/stemming_exceptions.txt",'r',encoding="utf8") #Add the appropriate path.
-negative=open("C:/modules/negative.txt",'r',encoding="utf8") #Add the appropriate path.
+food=open("C:\PhD\Anastasios-Liapakis-master/LF.txt",'r',encoding="utf8") #Add the appropriate path.
+service=open("C:\PhD\Anastasios-Liapakis-master/LS.txt",'r',encoding="utf8") #Add the appropriate path.
+image=open("C:\PhD\Anastasios-Liapakis-master/LI.txt",'r',encoding="utf8") #Add the appropriate path.
+antistixies=open("C:\PhD\Anastasios-Liapakis-master/capitalize.txt",encoding="utf8") #Add the appropriate path.
+asiman=open("C:\PhD\Anastasios-Liapakis-master/StopWords.txt",'r',encoding="utf8") #Add the appropriate path.
+dicq=open("C:\PhD\Anastasios-Liapakis-master/Dictionary_DoQl.txt",'r',encoding="utf8") #Add the appropriate path.
+dics=open("C:\PhD\Anastasios-Liapakis-master/Dictionary_DοS.txt",'r',encoding="utf8") #Add the appropriate path.
+dici=open("C:\PhD\Anastasios-Liapakis-master/Dictionary_DoI.txt",'r',encoding="utf8") #Add the appropriate path.
+suff=open("C:\PhD\Anastasios-Liapakis-master/suffix.txt",'r',encoding="utf8") #Add the appropriate path.
+exceptions=open("C:\PhD\Anastasios-Liapakis-master/stemming_exceptions.txt",'r',encoding="utf8") #Add the appropriate path.
+negative=open("C:\PhD\Anastasios-Liapakis-master/negative.txt",'r',encoding="utf8") #Add the appropriate path.
 #Creating a dictionary for converting the lowercase characters to uppercase.
 for rec in antistixies:
     gramma=rec.split(',')
@@ -92,7 +92,7 @@ for line in dics:
     timis=timis.strip('\n')
     DC[kleidi]=float(timis)
 dics.close()
-#Creating the image's dictionary (DoQi).
+#Creating the image's dictionary (DoI).
 for line in dici:
     polarit=line.split(',')
     kleidi=polarit[0]
@@ -101,7 +101,7 @@ for line in dici:
     DI[kleidi]=float(timiI)
 dici.close()
 #Access to the data base that contains the customers' evaluations and useful information for analysis (data set or training set or annotated set).
-db_file = "C:/modules/Annotated1.accdb" #Add the appropriate path.
+db_file = "C:\PhD\Anastasios-Liapakis-master/Annotated1.accdb" #Add the appropriate path.
 user = 'admin'
 password = ''
 
