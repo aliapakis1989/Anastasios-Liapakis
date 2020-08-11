@@ -1,5 +1,5 @@
 # Anastasios-Liapakis
-PhD Code Anastasios Michael Liapakis/Agricultural University of Athens/Informatics Laboratory
+PhD Anastasios Michael Liapakis/Agricultural University of Athens/Informatics Laboratory
 ---------------------------------------------------------------------------------------------
 
 At first, open the files: modules.py and Main_code.py.
